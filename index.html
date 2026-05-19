@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azhaghiri V | MERN Stack Developer - 3D Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="./images/AV.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+        <p class="loader-text">LOADING PORTFOLIO</p>
+    </div>
+
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <!-- <img style="height: 60px; width: 60px; border-radius: 50%;" src="./images/logo.png" alt="Logo"> -->
+            <span class="logo-3d">AV</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">
+                <span class="name-3d" data-text="AZHAGHIRI">AZHAGHIRI</span>
+            </h1>
+            <h2 class="hero-title">
+                <span class="typing-text">MERN Stack Developer</span>
+            </h2>
+            <p class="hero-desc">Building full-stack web applications with React, Node.js & MongoDB</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Work <i class="fas fa-arrow-right"></i></a>
+                <a href="#contact" class="btn btn-outline">Hire Me</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/Azhaghiri" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:aathi6944@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-3d-scene">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"><div class="wheel"></div></div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2 class="section-title" data-text="ABOUT ME">ABOUT ME</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-container">
+            <div class="about-image-card">
+                <div class="card-3d">
+                    <div class="card-front">
+                        <img src="./images/Alagiri.png" alt="Azhaghiri V">
+                        <div class="card-shine"></div>
+                        <div class="hover-hint">
+                            <i class="fas fa-mouse-pointer"></i>
+                            <span>Hover Me</span>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <h3>Azhaghiri V</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <span class="info-label">Degree</span>
+                                    <span class="info-value">B.Com</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <span class="info-label">Location</span>
+                                    <span class="info-value">Salem, Tamil Nadu</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div>
+                                    <span class="info-label">Role</span>
+                                    <span class="info-value">MERN Developer</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <span class="info-label">Email</span>
+                                    <span class="info-value">aathi6944@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <span class="info-label">Phone</span>
+                                    <span class="info-value">+91-6379981170</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-code"></i>
+                                <div>
+                                    <span class="info-label">Stack</span>
+                                    <span class="info-value">MERN Stack</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-stats">
+                            <div class="stat"><strong>4</strong><span>Projects</span></div>
+                            <div class="stat"><strong>2</strong><span>Clients</span></div>
+                            <div class="stat"><strong>1</strong><span>Certificate</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3 class="about-subtitle">MERN Stack Developer</h3>
+                <h2 class="about-heading">Building <span class="gradient-text">Full-Stack Solutions</span> That Matter</h2>
+                <p class="about-desc">
+                    B.Com graduate and trained MERN Stack Developer with practical experience creating 
+                    full-stack web applications. Proficient in HTML, CSS, JavaScript, React, Node.js, 
+                    Express.js, MongoDB, Redux Toolkit and REST APIs.
+                </p>
+                <p class="about-desc">
+                    Strong focus on functionality and user experience. Motivated to contribute to 
+                    real-world software development projects with modern, responsive, and scalable solutions.
+                </p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-code"></i>
+                        <div>
+                            <h4>Clean Code</h4>
+                            <p>Writing maintainable, scalable code</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-palette"></i>
+                        <div>
+                            <h4>Creative Design</h4>
+                            <p>Crafting visually stunning interfaces</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-rocket"></i>
+                        <div>
+                            <h4>Fast Delivery</h4>
+                            <p>On-time project completion</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <h4>Responsive</h4>
+                            <p>Perfect on every device</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://drive.google.com/file/d/1P3tf3JbJNMaxJisNBGWg_U9-NIxHw9pt/view?usp=drive_link"  target="_blank" class="btn btn-primary">Download Resume <i class="fas fa-download"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="section-header">
+            <h2 class="section-title" data-text="EDUCATION">EDUCATION</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">My Academic Journey</p>
+        </div>
+        <div class="timeline-3d">
+            <div class="timeline-line"></div>
+            <div class="timeline-item left">
+                <div class="timeline-card">
+                    <div class="timeline-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-year">June 2021 – May 2024</div>
+                    <h3>Bachelor of Commerce (B.Com)</h3>
+                    <h4>Salem Sowdeswari College, Salem, Tamil Nadu</h4>
+                    <p>Completed a three-year undergraduate program in Commerce, developing strong foundations in business, finance, and analytical thinking.</p>
+                    <div class="timeline-tags">
+                        <span>B.Com</span>
+                        <span>Salem, TN</span>
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-card">
+                    <div class="timeline-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="timeline-year">Jan 2025 – Jan 2026</div>
+                    <h3>MERN Stack Web Developer Training</h3>
+                    <h4>AccioJob, Salem, Tamil Nadu</h4>
+                    <p>Intensive full-stack development training covering HTML, CSS, JavaScript, React, Node.js, Express.js, MongoDB, Redux Toolkit and REST APIs with hands-on projects.</p>
+                    <div class="timeline-tags">
+                        <span>MERN Stack</span>
+                        <span>Full Stack</span>
+                        <a style="color: white;" href="https://drive.google.com/file/d/1QH6IHDhOqY10-NFuASqnxp43ldmEZLg3/view" target="_blank" >View Certificate</a>
+                        
+                    </div>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section - Falling Balls -->
+    <section id="skills" class="skills">
+        <div class="section-header">
+            <h2 class="section-title" data-text="SKILLS">SKILLS</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">My Technical Arsenal</p>
+        </div>
+        <div class="skills-container">
+            <canvas id="skills-canvas"></canvas>
+            <div class="skills-info">
+                <div class="skill-categories">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Frontend</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>HTML / CSS</span><span>95%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>JavaScript</span><span>85%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>React.js</span><span>80%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Bootstrap</span><span>88%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fas fa-server"></i> Backend & Tools</h3>
+                        <div class="skill-bars">
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Node.js / Express.js</span><span>80%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>MongoDB</span><span>78%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 78%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>Redux Toolkit</span><span>75%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 75%"></div></div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-info">
+                                    <span>REST APIs / Git</span><span>82%</span>
+                                </div>
+                                <div class="bar"><div class="fill" style="width: 82%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="skills-hint"><i class="fas fa-hand-pointer"></i> Click & drag the balls to interact!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="section-header">
+            <h2 class="section-title" data-text="PROJECTS">PROJECTS</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Featured Works</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card-3d">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="./images/Accto.png" alt="Actto ITR">
+                        <div class="project-overlay">
+                            <h3>Actto ITR Plan Selection</h3>
+                            <span class="project-cat">Freelance Client Project</span>
+                        </div>
+                    </div>
+                    <div class="project-back">
+                        <h3>Actto ITR Plan Selection</h3>
+                        <p>Responsive web platform for selecting Income Tax Return filing plans. Features plan selection, popup modals, localStorage and real-time form validation.</p>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://itr.accto.in/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card-3d">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="./images/myway.png" alt="My Way App">
+                        <div class="project-overlay">
+                            <h3>My Way — Web Application</h3>
+                            <span class="project-cat">Full Stack Project</span>
+                        </div>
+                    </div>
+                    <div class="project-back">
+                        <h3>My Way — Web Application</h3>
+                        <p>Interactive web application with modern UI and dynamic rendering. Features responsive navigation, dynamic content systems and hosted via Microsoft DevTunnel.</p>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card-3d">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="./images/myshow.png" alt="MyShow">
+                        <div class="project-overlay">
+                            <h3>MyShow — Movie Booking</h3>
+                            <span class="project-cat">Full Stack MERN</span>
+                        </div>
+                    </div>
+                    <div class="project-back">
+                        <h3>MyShow — Movie Booking</h3>
+                        <p>Full-stack movie booking platform with JWT authentication, role-based access, admin panel for movies, seat selection and MongoDB for data management.</p>
+                        <div class="project-tech">
+                            <span>React.js</span><span>Node.js</span><span>MongoDB</span><span>JWT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card-3d">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="./images/Saree.png" alt="RSSarees">
+                        <div class="project-overlay">
+                            <h3>RSSarees — Textile E-Commerce</h3>
+                            <span class="project-cat">Freelance Client Project</span>
+                        </div>
+                    </div>
+                    <div class="project-back">
+                        <h3>RSSarees — Textile E-Commerce</h3>
+                        <p>Responsive textile e-commerce app showcasing saree collections with category browsing, product detail pages and optimized performance. Hosted on Firebase.</p>
+                        <div class="project-tech">
+                            <span>React.js</span><span>Bootstrap</span><span>Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://rssarees-dea02.web.app/" target="_blank"><i class="fas fa-external-link-alt"></i> Live Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="project-card-3d">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="./images/news.png" alt="Project 6">
+                        <div class="project-overlay">
+                            <h3>News Website — Report Today</h3>
+                            <span class="project-cat">Web Application</span>
+                        </div>
+                    </div>
+                    <div class="project-back">
+                        <h3>News Website — Report Today</h3>
+                        <p>Responsive news website with real-time news updates, category browsing, and advanced search functionality.</p>
+                        <div class="project-tech">
+                            <span>React</span><span>Express</span><span>Node</span><span>MongoDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="project-card-3d">
+                <div class="project-inner">
+                    <div class="project-front">
+                        <img src="./images/portfolio.png" alt="Project 6">
+                        <div class="project-overlay">
+                            <h3>Portfolio — Azhaghiri V</h3>
+                            <span class="project-cat">Portfolio Website</span>
+                        </div>
+                    </div>
+                    <div class="project-back">
+                        <h3>Portfolio — Azhaghiri V</h3>
+                        <p>Responsive portfolio website with 3D animations.</p>
+                        <div class="project-tech">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>three.js</span><span>GSAP</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#home"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="section-header">
+            <h2 class="section-title" data-text="ACHIEVEMENTS">ACHIEVEMENTS</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Awards & Recognition</p>
+        </div>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <div class="trophy-3d">
+                    <div class="trophy-icon"><i class="fas fa-certificate"></i></div>
+                </div>
+                <h3>MERN Full Stack Certificate</h3>
+                <p>AccioJob — Full Stack Development Course</p>
+                  <!-- <a style="color: #ff4c60;z-index: 10;" href="https://drive.google.com/file/d/1E31r5j026QO_k_O_H10jO7J2lK8Y3Z4Z/view?usp=sharing" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a> -->
+                <span class="year">2026</span>
+            </div>
+            <div class="achievement-card">
+                <div class="trophy-3d">
+                    <div class="trophy-icon"><i class="fas fa-briefcase"></i></div>
+                </div>
+                <h3>Freelance Developer</h3>
+                <p>Delivered 2 live client projects successfully</p>
+                <span class="year">2025</span>
+            </div>
+            <div class="achievement-card">
+                <div class="trophy-3d">
+                    <div class="trophy-icon"><i class="fas fa-code"></i></div>
+                </div>
+                <h3>Full Stack Projects</h3>
+                <p>Built MyShow & My Way with MERN stack</p>
+                <span class="year">2026</span>
+            </div>
+            <div class="achievement-card">
+                <div class="trophy-3d">
+                    <div class="trophy-icon"><i class="fas fa-fire"></i></div>
+                </div>
+                <h3>E-Commerce Developer</h3>
+                <p>RSSarees — Live on Firebase Hosting</p>
+                <span class="year">2026</span>
+            </div>
+            <div class="achievement-card">
+                <div class="trophy-3d">
+                    <div class="trophy-icon"><i class="fas fa-camera"></i></div>
+                </div>
+                <h3>Creative Skills</h3>
+                <p>Photoshop & Premiere Pro — Photo/Video Editing</p>
+                <span class="year">2021</span>
+            </div>
+            <div class="achievement-card">
+                <div class="trophy-3d">
+                    <div class="trophy-icon"><i class="fas fa-graduation-cap"></i></div>
+                </div>
+                <h3>B.Com Graduate</h3>
+                <p>Salem Sowdeswari College</p>
+                <span class="year">2024</span>
+            </div>
+        </div>
+        <div class="stats-counter">
+            <div class="stat-item">
+                <div class="stat-number" data-count="6">0</div>
+                <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="2">0</div>
+                <div class="stat-label">Clients Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label">Certificate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label">Year Training</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="hobbies">
+        <div class="section-header">
+            <h2 class="section-title" data-text="HOBBIES">HOBBIES</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Beyond Coding</p>
+        </div>
+        <div class="hobbies-container">
+            <div class="hobby-cube">
+                <div class="cube-face cube-front">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>Capturing creative visuals</p>
+                </div>
+                <div class="cube-face cube-back">
+                    <i class="fas fa-film"></i>
+                    <h3>Video Editing</h3>
+                    <p>Premiere Pro storytelling</p>
+                </div>
+                <div class="cube-face cube-right">
+                    <i class="fas fa-magic"></i>
+                    <h3>Photo Editing</h3>
+                    <p>Creative Photoshop work</p>
+                </div>
+                <div class="cube-face cube-left">
+                    <i class="fas fa-code"></i>
+                    <h3>Coding</h3>
+                    <p>Building cool web apps</p>
+                </div>
+                <div class="cube-face cube-top">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Web Design</h3>
+                    <p>UI & responsive layouts</p>
+                </div>
+                <div class="cube-face cube-bottom">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Creativity</h3>
+                    <p>Design & visual arts</p>
+                </div>
+            </div>
+            <div class="hobbies-list">
+                <h3>What I Love Doing</h3>
+                <p class="hobbies-intro">When I'm not coding or designing, you'll find me exploring various creative outlets and adventures that fuel my inspiration.</p>
+                <div class="hobby-items">
+                    <div class="hobby-item">
+                        <div class="hobby-icon"><i class="fas fa-camera"></i></div>
+                        <div class="hobby-details">
+                            <h4>Photography</h4>
+                            <p>Passionate about capturing and editing creative visuals</p>
+                        </div>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon"><i class="fas fa-magic"></i></div>
+                        <div class="hobby-details">
+                            <h4>Photo Editing</h4>
+                            <p>Skilled in Adobe Photoshop for creative photo manipulation</p>
+                        </div>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon"><i class="fas fa-film"></i></div>
+                        <div class="hobby-details">
+                            <h4>Video Editing</h4>
+                            <p>Creating engaging content with Adobe Premiere Pro</p>
+                        </div>
+                    </div>
+                    <div class="hobby-item">
+                        <div class="hobby-icon"><i class="fas fa-code"></i></div>
+                        <div class="hobby-details">
+                            <h4>Web Development</h4>
+                            <p>Building and experimenting with new web technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2 class="section-title" data-text="CONTACT">CONTACT</h2>
+            <div class="section-line"></div>
+            <p class="section-subtitle">Let's Work Together</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>Have a project in mind? Let's create something amazing together!</p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>aathi6944@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91-6379981170</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Salem, Tamil Nadu, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form onsubmit="sendwhatsapp(event)" class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="number" placeholder="Your Phone Number" pattern="[0-9+\s\-]{7,15}" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send on WhatsApp <i class="fab fa-whatsapp"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">AV</div>
+            <p>&copy; 2026 Azhaghiri V. Crafted with <i class="fas fa-heart"></i> and lots of coffee</p>
+            <div class="footer-social">
+                <a href="https://github.com/Azhaghiri" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/azhaghiri-v-472239281/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:aathi6944@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js & Matter.js for 3D & physics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Matter.js removed – using custom canvas physics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
